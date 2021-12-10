@@ -6,7 +6,8 @@ import {
 
 class SpecificationRepository implements ISpecificationRepository {
   private specifications: Specification[];
-  constructor() {
+
+  private constructor() {
     this.specifications = [];
   }
 
