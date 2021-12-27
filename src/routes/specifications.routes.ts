@@ -1,14 +1,10 @@
 import { Router } from "express";
 
+import { ensureAuthenticate } from "../middlewares/ensureAuthenticate";
 import { CreateSpecificationController } from "../modules/cars/useCases/createSpecification/CreateSpecificationController";
 
-const SpecificationRouters = Router();
+const specificationRouters = Router();
 const createSpecificationController = new CreateSpecificationController();
-SpecificationRouters.post("/", createSpecificationController.handle);
-
-/* SpecificationRouters.get("/", (request, response) => {
-  const all = SpecificationRepository.list();
-  return response.status(201).json(all);
-});
-*/
-export { SpecificationRouters };
+specificationRouters.use(ensureAuthenticate);
+specificationRouters.post("/", createSpecificationController.handle);
+export { specificationRouters };
