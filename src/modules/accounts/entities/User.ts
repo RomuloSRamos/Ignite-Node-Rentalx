@@ -15,6 +15,8 @@ class User {
   driver_license: string;
   @Column()
   isAdmin: string;
+  @Column()
+  avatar: string;
   @CreateDateColumn()
   created_at?: Date;
   constructor() {
