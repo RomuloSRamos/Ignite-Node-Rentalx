@@ -3,8 +3,8 @@ import { Router } from "express";
 import { CreateSpecificationController } from "@modules/cars/useCases/createSpecification/CreateSpecificationController";
 import { ensureAuthenticate } from "@shared/infra/http/middlewares/ensureAuthenticate";
 
-const specificationRouters = Router();
+const specificationRoutes = Router();
 const createSpecificationController = new CreateSpecificationController();
-specificationRouters.use(ensureAuthenticate);
-specificationRouters.post("/", createSpecificationController.handle);
-export { specificationRouters };
+specificationRoutes.use(ensureAuthenticate);
+specificationRoutes.post("/", createSpecificationController.handle);
+export { specificationRoutes };

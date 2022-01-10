@@ -2,8 +2,8 @@ import { Router } from "express";
 
 import { AuthenticateUserController } from "@modules/accounts/useCases/authenticateUser/authenticateUserController";
 
-const authenticateRouters = Router();
+const authenticateRoutes = Router();
 const authenticateUserController = new AuthenticateUserController();
-authenticateRouters.post("/sessions", authenticateUserController.handle);
+authenticateRoutes.post("/sessions", authenticateUserController.handle);
 
-export { authenticateRouters };
+export { authenticateRoutes };
