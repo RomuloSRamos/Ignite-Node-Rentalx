@@ -9,7 +9,7 @@ export class CreateCarImages1643372356043 implements MigrationInterface {
           { name: "id", type: "uuid", isPrimary: true },
           { name: "car_id", type: "uuid" },
           { name: "image_name", type: "varchar" },
-          { name: "create_at", type: "timestamp", default: "now()" },
+          { name: "created_at", type: "timestamp", default: "now()" },
         ],
         foreignKeys: [
           {
